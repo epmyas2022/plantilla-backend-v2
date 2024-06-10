@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import http from 'http'
+import { type route, type middleware } from '../types/utils'
 dotenv.config()
 
 export default class Server {
@@ -8,6 +9,8 @@ export default class Server {
   private readonly _app: express.Application
   private readonly _server: http.Server
   private readonly _host: string
+  private readonly middlewares: middleware[] = []
+  private readonly routes: route[] = []
 
   constructor (server?: http.Server, app?: express.Application) {
     this._port = Number(process.env.PORT ?? 3000)
@@ -24,7 +27,27 @@ export default class Server {
     return this._app
   }
 
+  addMiddleware (middleware: middleware): this {
+    this.middlewares.push(middleware)
+    return this
+  }
+
+  addRoute (route: route): this {
+    this.routes.push(route)
+    return this
+  }
+
+  initMiddlewares (): void {
+    this.middlewares.forEach(middleware => this._app.use(middleware))
+  }
+
+  initRoutes (): void {
+    this.routes.forEach(route => this._app.use(route.path, route.router))
+  }
+
   start (): void {
+    this.initMiddlewares()
+    this.initRoutes()
     this._server.listen(this._port, this._host, () => {
       console.log(`🚀 Server running on http://${this._host}:${this._port}`)
     })
