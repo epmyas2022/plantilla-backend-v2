@@ -1,6 +1,9 @@
 import fs from 'fs'
 
 export default abstract class UtilsAssets {
+  /**
+   * Load a banner from the assets folder of config
+   */
   static loadBanner (name: string, vars?: Record<string, string>): void {
     let banner = fs.readFileSync(`./app/config/assets/${name}.txt`, 'utf8')
     if (vars) {
