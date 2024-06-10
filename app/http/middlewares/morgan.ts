@@ -13,3 +13,11 @@ export const customFormat: middleware = morgan(function (tokens, req: Request, r
 })
 
 export const defaultFormat: middleware = morgan('dev')
+
+export const combinedFormat: middleware = morgan('combined')
+
+export const commonFormat: middleware = morgan('common')
+
+export const shortFormat: middleware = morgan('short')
+
+export const tinyFormat: middleware = morgan('tiny')
