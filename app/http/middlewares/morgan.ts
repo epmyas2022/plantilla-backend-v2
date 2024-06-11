@@ -21,3 +21,5 @@ export const commonFormat: middleware = morgan('common')
 export const shortFormat: middleware = morgan('short')
 
 export const tinyFormat: middleware = morgan('tiny')
+
+console.log('morgan middleware loaded')
