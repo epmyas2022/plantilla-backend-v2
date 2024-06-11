@@ -18,7 +18,7 @@ module.exports = {
    * Any rules defined here will override rules from @commitlint/config-conventional
    */
   rules: {
-    'type-enum': [2, 'always', [
+    /*  'type-enum': [2, 'always', [
       'feat',
       'fix',
       'docs',
@@ -30,7 +30,7 @@ module.exports = {
       'revert',
       'perf',
       'vercel'
-    ]]
+    ]] */
   },
   /*
    * Array of functions that return true if commitlint should ignore the given message.
