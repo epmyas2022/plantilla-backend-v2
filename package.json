@@ -45,5 +45,8 @@
       "eslint --quiet --fix"
     ],
     "**/*.{html,json,css,scss,md,mdx}": []
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
