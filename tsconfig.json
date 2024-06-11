@@ -104,6 +104,7 @@
   "include": [
     "index.d.ts",
     "app/**/*.ts",
+    "tests/**/*.ts",
     "prisma/**/*.ts",
     ".eslintrc.js",
     "commitlint.config.js",
