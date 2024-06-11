@@ -1,4 +1,13 @@
-# 0.1.0 (2024-06-11)
+# [0.2.0](https://github.com/epmyas2022/plantilla-backend-v2/compare/v0.1.0...v0.2.0) (2024-06-11)
+
+
+### Features
+
+* :technologist: agregando middleware ([5da30e1](https://github.com/epmyas2022/plantilla-backend-v2/commit/5da30e1c9c708cbecc1c1dfc449f75f13458e9fa))
+
+
+
+# [0.1.0](https://github.com/epmyas2022/plantilla-backend-v2/compare/43259d658f6922d2c751a28cba45348de5ebd59b...v0.1.0) (2024-06-11)
 
 
 ### Bug Fixes
