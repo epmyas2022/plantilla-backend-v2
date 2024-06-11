@@ -5,4 +5,9 @@ export interface route {
   path: string
   router: Router
 }
-export type controller = (req: Request, res: Response) => void
+export type controller = Record<string, (req: Request, res: Response) => void>
+
+export interface pathController {
+  path: string
+  method: string
+}
