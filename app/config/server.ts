@@ -37,6 +37,11 @@ export default class Server {
     return this
   }
 
+  addRouter (router: express.Router): this {
+    this._app.use(router)
+    return this
+  }
+
   initMiddlewares (): void {
     this.middlewares.forEach(middleware => this._app.use(middleware))
   }
