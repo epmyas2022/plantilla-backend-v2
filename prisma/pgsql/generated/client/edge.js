@@ -139,7 +139,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\casti\\Desktop\\web\\plantilla-backend-v2\\prisma\\pgsql\\generated\\client",
+      "value": "/home/dtic/plantilla-backend-v2/prisma/pgsql/generated/client",
       "fromEnvVar": null
     },
     "config": {
@@ -148,7 +148,7 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],

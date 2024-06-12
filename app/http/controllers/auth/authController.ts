@@ -1,12 +1,16 @@
 import { type Request, type Response } from 'express'
-import Controller from '../controller'
+import BaseController from '../controller'
+import { controller, httpGet } from 'inversify-express-utils'
+import { AuthService } from '../../services/authService'
 
-export default class AuthController extends Controller {
-  static login = async (req: Request, res: Response): Promise<void> => {
-    res.send('Login')
+@controller('/auth')
+export class AuthController extends BaseController {
+  constructor (private readonly authService: AuthService) {
+    super()
   }
 
-  static hello = async (req: Request, res: Response): Promise<void> => {
-    res.send('Hello world!')
+  @httpGet('/')
+  async hello (req: Request, res: Response): Promise<Response> {
+    return res.json(await this.authService.hello())
   }
 }

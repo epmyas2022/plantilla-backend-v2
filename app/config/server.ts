@@ -1,6 +1,8 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import http from 'http'
+import morgan from 'morgan'
+
 import { type route, type middleware } from '../types/utils'
 dotenv.config()
 
@@ -12,11 +14,12 @@ export default class Server {
   private readonly middlewares: middleware[] = []
   private readonly routes: route[] = []
 
-  constructor (server?: http.Server, app?: express.Application) {
+  constructor (server?: http.Server | any, app?: express.Application) {
     this._port = Number(process.env.PORT ?? 3000)
     this._host = process.env.HOST ?? 'localhost'
     this._app = !app ? express() : app
     this._server = !server ? http.createServer(this._app) : server
+    this.app.use(morgan('dev'))
   }
 
   get port (): number {

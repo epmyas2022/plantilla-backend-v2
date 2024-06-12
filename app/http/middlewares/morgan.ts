@@ -20,4 +20,9 @@ export const commonFormat: middleware = morgan('common')
 
 export const shortFormat: middleware = morgan('short')
 
-export const tinyFormat: middleware = morgan('tiny')
+export const tinyFormat: middleware = morgan('tiny', {
+  skip: (req: Request, res: Response) => {
+    console.log(res.statusCode)
+    return res.statusCode >= 400
+  }
+})

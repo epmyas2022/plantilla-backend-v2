@@ -1,8 +1,10 @@
 import type PrismaType from '../../prisma/pgsql/generated/client'
 import { type GrudRepository } from '../interfaces/grudRepository'
 import prisma from '../../prisma/index'
+import { injectable } from 'inversify'
 
-export default class UserRepository implements GrudRepository {
+@injectable()
+export class UserRepository implements GrudRepository {
   async create (data: PrismaType.User): Promise<object> {
     return await prisma.pgsql.user.create({ data })
   }
